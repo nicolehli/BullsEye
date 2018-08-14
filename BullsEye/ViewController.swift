@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var guess: Int = 50
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        let alert = UIAlertController(title: "Hello, World!", message: "This is my first app!", preferredStyle: .alert)
+        
+        let msg = "The value of the slider is: \(guess)"
+        
+        let alert = UIAlertController(title: "Hello, World!", message: msg, preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         
@@ -29,6 +34,12 @@ class ViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func sliderMoved(_ sender: UISlider) {
 
+        guess = lroundf(sender.value)
+    }
+    
+    
 }
 
