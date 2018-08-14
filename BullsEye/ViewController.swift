@@ -10,10 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var guess: Int = 0
+    var guess = 0
+    var targetValue = 0
+    var score = 0
+    var round = 0
+    
     @IBOutlet weak var slider: UISlider!
-    var targetValue: Int = 0
     @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,8 @@ class ViewController: UIViewController {
     
     func updateLabel() {
         targetLabel.text = String(targetValue)
+        scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,20 +45,42 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        let difference: Int = abs(guess - targetValue)
         
-        let msg = "The value of the slider is: \(guess)" +
-        "\nThe target value is \(targetValue)" +
-        "\nThe difference is \(difference)"
+        // Initial Points Calculation
+        let difference = abs(guess - targetValue)
+        var points = 100 - difference
         
-        let alert = UIAlertController(title: "Hello, World!", message: msg, preferredStyle: .alert)
+        // Alert Feedback Message and Bonus
+        let feedback: String
+        if difference == 0 {
+            feedback = "Bulls Eye! Bonus 100 points."
+            points += 100
+        } else if difference < 5 {
+            if difference == 1 {
+                points += 50
+                feedback = "Off by one! Bonus 50 points."
+            } else {
+                feedback = "You almost had it!"
+            }
+        } else if difference < 10 {
+            feedback = "Pretty good."
+        } else {
+            feedback = "Not even close..."
+        }
+        score += points
+        let msg = "You scored \(points) points"
         
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        
+        let alert = UIAlertController(title: feedback, message: msg, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Play again!", style: .default, handler: nil)
         
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
         
+        // Start New Round
+        round += 1
         startNewRound()
     }
     
