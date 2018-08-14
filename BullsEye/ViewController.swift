@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         guess = 50
         slider.value = Float(guess)
         updateLabel()
+        round += 1
     }
     
     func updateLabel() {
@@ -73,15 +74,15 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: feedback, message: msg, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Play again!", style: .default, handler: nil)
+        // Swift Closure in handler
+        let action = UIAlertAction(title: "Play again!", style: .default, handler: {
+            action in
+                self.startNewRound()
+        })
         
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-        
-        // Start New Round
-        round += 1
-        startNewRound()
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
