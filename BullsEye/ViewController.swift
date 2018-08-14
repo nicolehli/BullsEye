@@ -24,6 +24,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         guess = lroundf(slider.value)
         startNewGame()
+        
+        let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal") // UIImage(named: "SliderThumb-Normal")
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        
+        let thumbImageHighlight = #imageLiteral(resourceName: "SliderThumb-Highlighted") // UIImage(named: "SliderThumb-Highlight")
+        slider.setThumbImage(thumbImageHighlight, for: .highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        
+        let trackLeftImage = UIImage(named: "SliderTrackerLeft") // #imageLiteral(resourceName: "SliderTrackLeft")
+        let trackLeftResizeableImage = trackLeftImage?.resizableImage(withCapInsets: insets)
+        slider.setMinimumTrackImage(trackLeftResizeableImage, for: .normal)
+        
+        let trackRightImage = #imageLiteral(resourceName: "SliderTrackRight")
+        let trackRightResizeable = trackRightImage.resizableImage(withCapInsets: insets)
+        slider.setMinimumTrackImage(trackLeftResizeableImage, for: .normal)
     }
     
     @IBAction func startNewGame() {
