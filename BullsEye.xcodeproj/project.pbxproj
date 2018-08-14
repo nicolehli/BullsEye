@@ -13,6 +13,7 @@
 		AE8CC7ED2122551D00A081E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE8CC7EC2122551D00A081E1 /* Assets.xcassets */; };
 		AE8CC7F02122551D00A081E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE8CC7EE2122551D00A081E1 /* LaunchScreen.storyboard */; };
 		AE8CC7F82122929F00A081E1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8CC7F72122929F00A081E1 /* AboutViewController.swift */; };
+		AEE86D0121229F52001FD040 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = AEE86D0021229F52001FD040 /* BullsEye.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AE8CC7EF2122551D00A081E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE8CC7F12122551D00A081E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE8CC7F72122929F00A081E1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		AEE86D0021229F52001FD040 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		AE8CC7E42122551A00A081E1 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				AEE86D0021229F52001FD040 /* BullsEye.html */,
 				AE8CC7E52122551A00A081E1 /* AppDelegate.swift */,
 				AE8CC7E72122551B00A081E1 /* ViewController.swift */,
 				AE8CC7F72122929F00A081E1 /* AboutViewController.swift */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE8CC7F02122551D00A081E1 /* LaunchScreen.storyboard in Resources */,
+				AEE86D0121229F52001FD040 /* BullsEye.html in Resources */,
 				AE8CC7ED2122551D00A081E1 /* Assets.xcassets in Resources */,
 				AE8CC7EB2122551B00A081E1 /* Main.storyboard in Resources */,
 			);
