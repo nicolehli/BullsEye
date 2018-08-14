@@ -23,15 +23,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guess = lroundf(slider.value)
+        startNewGame()
+    }
+    
+    @IBAction func startNewGame() {
+        score = 0
+        round = 0
         startNewRound()
     }
     
     func startNewRound() {
+        round += 1
         targetValue = Int(arc4random_uniform(100)) + 1 // random 0-99 generated for our slider on 1-100
         guess = 50
         slider.value = Float(guess)
         updateLabel()
-        round += 1
     }
     
     func updateLabel() {
